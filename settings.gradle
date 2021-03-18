@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':GalleryAndLibraryAndroidModule', ':Editor-Android-Module',':ImageTextModule'
 rootProject.name = "PocoEdit"

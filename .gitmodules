@@ -1,0 +1,9 @@
+[submodule "GalleryAndLibraryAndroidModule"]
+	path = GalleryAndLibraryAndroidModule
+	url = https://github.com/MrShashankBisht/GalleryAndLibraryAndroidModule.git
+[submodule "Editor-Android-Module"]
+	path = Editor-Android-Module
+	url = https://github.com/MrShashankBisht/Editor-Android-Module.git
+[submodule "ImageTextModule"]
+	path = ImageTextModule
+	url = https://github.com/MrShashankBisht/ImageTextModule.git

@@ -1,6 +1,8 @@
  package com.iab.pocoedit;
 
 import android.media.ExifInterface;
+import android.net.Uri;
+import android.os.Build;
 import android.text.TextUtils;
 
 import com.iab.galleryandlibrary.utils.Size;import com.iab.photoeditor.ImageInfoDataModel;
@@ -40,26 +42,34 @@ import java.text.DateFormat;
         }
     }
 
-    public static ImageInfoDataModel getImageInfoDataModel(String path, String bucketName, String name)
+    public static ImageInfoDataModel getImageInfoDataModel(Uri imageUri, String path, String bucketName, String name)
     {
         ImageInfoDataModel imageInfoDataModel = new ImageInfoDataModel();
-        try {
-            ExifInterface exifInterface = new ExifInterface(path);
-            String date = exifInterface.getAttribute(ExifInterface.TAG_DATETIME_ORIGINAL);
-            String length = exifInterface.getAttribute(ExifInterface.TAG_IMAGE_LENGTH);
-            String width = exifInterface.getAttribute(ExifInterface.TAG_IMAGE_WIDTH);
-            String size = calculateFileSize(path);
+        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.P){
+//            apply Media Query on image Uri and get info of image
+
+
+
+        }else{
+            try {
+                ExifInterface exifInterface = new ExifInterface(path);
+                String date = exifInterface.getAttribute(ExifInterface.TAG_DATETIME_ORIGINAL);
+                String length = exifInterface.getAttribute(ExifInterface.TAG_IMAGE_LENGTH);
+                String width = exifInterface.getAttribute(ExifInterface.TAG_IMAGE_WIDTH);
+                String size = calculateFileSize(path);
 //            creating ImageInfoDataModel
-            imageInfoDataModel.setName(name);
-            imageInfoDataModel.setSize(size);
-            imageInfoDataModel.setDimension(new Size(Float.parseFloat(width), Float.parseFloat(length)));
-            imageInfoDataModel.setDate(date);
-            imageInfoDataModel.setBucketName(bucketName);
-            imageInfoDataModel.setFullPath(path);
-            return imageInfoDataModel;
-        } catch (IOException e) {
-            e.printStackTrace();
+                imageInfoDataModel.setName(name);
+                imageInfoDataModel.setSize(size);
+                imageInfoDataModel.setDimension(new Size(Float.parseFloat(width), Float.parseFloat(length)));
+                imageInfoDataModel.setDate(date);
+                imageInfoDataModel.setBucketName(bucketName);
+                imageInfoDataModel.setFullPath(path);
+                return imageInfoDataModel;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
         return imageInfoDataModel;
     }
 

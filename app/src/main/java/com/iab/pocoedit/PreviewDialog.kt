@@ -16,9 +16,9 @@ import androidx.core.content.FileProvider
 import androidx.fragment.app.DialogFragment
 import com.bumptech.glide.Glide
 import com.iab.imagetext.model.ImageTextDataModel
-import com.iab.pocoedit.ExifUtils.getImageInfoDataModel
 import com.iab.pocoedit.MainActivity.RequestCode.ACTION_REQUEST_EDITIMAGE
 import com.iab.pocoedit.R
+import com.iab.pocoedit.getImageInfoDataModel
 import iamutkarshtiwari.github.io.ananas.editimage.EditImageActivity
 import iamutkarshtiwari.github.io.ananas.editimage.ImageEditorIntentBuilder
 import kotlinx.android.synthetic.main.preview_dialog_layout.*
@@ -118,21 +118,21 @@ class PreviewDialog(context: Context, private var imageTextDataModel: ImageTextD
         checkInfoMotionLayoutAndClose()
 //                    getRealPathFromURI(data!!.data!!, this)
         weakReferenceContext.get()?.let {
-            val intent = ImageEditorIntentBuilder(weakReferenceContext.get()!!,
-                    imageTextDataModel.imageUri?.let { it1 -> getRealPathFromURI(it1, weakReferenceContext.get()!!) }, getTempFilename(weakReferenceContext.get()!!))
-                    .withAddText()
-                    .withPaintFeature()
-                    .withFilterFeature()
-                    .withRotateFeature()
-                    .withCropFeature()
+            val intent = ImageEditorIntentBuilder(weakReferenceContext.get()!!, imageTextDataModel.imageUri?.let { it1 -> getRealPathFromURI(it1, weakReferenceContext.get()!!) }, getTempFilename(weakReferenceContext.get()!!))
+                .withAddText()
+                .withPaintFeature()
+                .withFilterFeature()
+                .withRotateFeature()
+                .withCropFeature()
 //                    .withBrightnessFeature()
 //                    .withSaturationFeature()
 //                    .withBeautyFeature()
 //                    .withStickerFeature()
-                    .withEditorTitle("Photo Editor")
-                    .forcePortrait(true)
-                    .setSupportActionBarVisibility(false)
-                    .build()
+                .withEditorTitle("Photo Editor")
+                .withBucketName(resources.getString(R.string.app_name))
+                .forcePortrait(true)
+                .setSupportActionBarVisibility(false)
+                .build()
 
             EditImageActivity.start(weakReferenceContext.get() as Activity, intent, ACTION_REQUEST_EDITIMAGE)
             this.dismiss()
@@ -140,19 +140,20 @@ class PreviewDialog(context: Context, private var imageTextDataModel: ImageTextD
     }
 
     private fun infoOfImage() {
-        checkInfoMotionLayout()
-        val fullPath = weakReferenceContext.get()?.let {
-            imageTextDataModel.imageUri?.let { it2 ->  getRealPathFromURI(it2, it)
+        weakReferenceContext.get()?.let {
+            imageTextDataModel.imageUri?.let { it2 ->
+                fullPath = getRealPathFromURI(it2, it)
+                val fileName = imageTextDataModel.text?.let { it.substring(0, it.indexOf('.')) }
+                val imageInfoDataModel: ImageInfoDataModel = getImageInfoDataModel(it, it2, fullPath!!, imageTextDataModel.bucketName, fileName)
+                name_textView.text = imageInfoDataModel.name
+                size_textView.text = imageInfoDataModel.size
+                dim_textView.text = imageInfoDataModel.dimension.getStringXY()
+                date_time_textView.text = imageInfoDataModel.getDate()
+                bucket_name_textView.text = imageInfoDataModel.bucketName
+                full_path_textView.text = imageInfoDataModel.fullPath
+                checkInfoMotionLayout()
             }
         }
-        val fileName = imageTextDataModel.text?.let { it.substring(0, it.indexOf('.')) }
-        val imageInfoDataModel: ImageInfoDataModel = getImageInfoDataModel(fullPath, imageTextDataModel.bucketName, fileName)
-        name_textView.text = imageInfoDataModel.name
-        size_textView.text = imageInfoDataModel.size
-        dim_textView.text = imageInfoDataModel.dimension.getStringXY()
-        date_time_textView.text = imageInfoDataModel.getDate()
-        bucket_name_textView.text = imageInfoDataModel.bucketName
-        full_path_textView.text = imageInfoDataModel.fullPath
     }
 
     private fun deleteImageAndCloseDialog(){

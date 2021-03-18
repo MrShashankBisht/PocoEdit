@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PocoEdit</string>
+    <string name="full_path">Full Path:</string>
 </resources>

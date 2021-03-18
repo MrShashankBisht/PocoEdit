@@ -10,4 +10,5 @@
 
 <!--    My colorss-->
     <color name="white_transparent">#CDFFFFFF</color>
+    <color name="text_color_light_blue">#CD3F8DED</color>
 </resources>

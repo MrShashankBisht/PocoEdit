@@ -13,16 +13,16 @@ import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
-fun getRealPathFromURI(contentURI: Uri, context: Context): String? {
+fun getRealPathFromURI(contentURI: Uri, context: Context): String {
     try {
-        val result: String?
+        var result:String
         val projection = arrayOf(MediaStore.Images.Media.DATA)
         val cursor = context.contentResolver.query(
                 contentURI, projection, null,
                 null, null
         )
         if (cursor == null) {
-            result = contentURI.path
+            result = contentURI.toString()
         } else {
             cursor.moveToFirst()
             val idx = cursor

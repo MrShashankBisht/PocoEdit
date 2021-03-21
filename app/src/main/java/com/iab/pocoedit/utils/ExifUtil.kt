@@ -81,7 +81,7 @@ fun getImageInfoDataModel(
         }
     } else {
         try {
-            val exifInterface = ExifInterface(path!!)
+            val exifInterface = ExifInterface(path)
             val date = exifInterface.getAttribute(ExifInterface.TAG_DATETIME_ORIGINAL)
             val length = exifInterface.getAttribute(ExifInterface.TAG_IMAGE_LENGTH)
             val width = exifInterface.getAttribute(ExifInterface.TAG_IMAGE_WIDTH)
@@ -102,9 +102,11 @@ fun getImageInfoDataModel(
 }
 
 fun calculateFileSize(filepath: String?): String {
-    //String filepathstr=filepath.toString();
-    val file = File(filepath)
-    return calculateSizeInMB(file.length().toFloat()).toString() + " MB"
+    filepath?.let {
+        val file = File(filepath)
+        return calculateSizeInMB(file.length().toFloat()).toString() + " MB"
+    }
+    return "Null"
 }
 
 fun calculateSizeInMB(size:Float):Float{

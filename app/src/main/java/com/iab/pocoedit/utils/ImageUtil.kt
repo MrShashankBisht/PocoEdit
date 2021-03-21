@@ -15,7 +15,7 @@ import java.util.*
 
 fun getRealPathFromURI(contentURI: Uri, context: Context): String {
     try {
-        var result:String
+        val result:String
         val projection = arrayOf(MediaStore.Images.Media.DATA)
         val cursor = context.contentResolver.query(
                 contentURI, projection, null,
@@ -80,7 +80,7 @@ fun createTempImageFile(context: Context): File? {
     // Create an image file name
     val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
     val fileName = "JPEG_${timeStamp}"
-    context.getExternalFilesDir(Environment.DIRECTORY_DCIM + "/.CameraTutorial")?.let { it1->
+    context.getExternalFilesDir(Environment.DIRECTORY_PICTURES+ "/." + context.resources.getString(R.string.app_name))?.let { it1->
         return File.createTempFile(
                 fileName, /* prefix */
                 ".jpg", /* suffix */

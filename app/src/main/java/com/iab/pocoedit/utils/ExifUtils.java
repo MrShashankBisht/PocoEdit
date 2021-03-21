@@ -1,4 +1,4 @@
- package com.iab.pocoedit;
+ package com.iab.pocoedit.utils;
 
 import android.media.ExifInterface;
 import android.net.Uri;

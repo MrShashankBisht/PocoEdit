@@ -9,6 +9,8 @@
     <color name="white">#FFFFFFFF</color>
 
 <!--    My colorss-->
-    <color name="white_transparent">#CDFFFFFF</color>
-    <color name="text_color_light_blue">#CD3F8DED</color>
+    <color name="white_transparent">#DDFFFFFF</color>
+    <color name="status_bar">#3F8DED</color>
+    <color name="title_bar">#2882EB</color>
+    <color name="text_color_light_blue">#3F8DED</color>
 </resources>

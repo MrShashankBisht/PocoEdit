@@ -6,7 +6,7 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
-        motion:duration="700">
+        motion:duration="500">
         <OnClick motion:clickAction="toggle" motion:targetId="@+id/main_activity_fab" />
        <KeyFrameSet>
        </KeyFrameSet>
@@ -18,7 +18,7 @@
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="28dp"
+            android:layout_marginBottom="50dp"
             android:layout_marginEnd="@dimen/margin_10dp"
             android:visibility="visible"
             motion:layout_constraintBottom_toBottomOf="parent" />
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_10dp"
-            android:layout_marginBottom="28dp"
+            android:layout_marginBottom="50dp"
             android:visibility="visible"
             motion:layout_constraintBottom_toBottomOf="parent" />
         <Constraint
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginEnd="@dimen/margin_10dp"
-            android:layout_marginBottom="28dp" />
+            android:layout_marginBottom="50dp" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
@@ -66,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_10dp"
-            android:layout_marginBottom="28dp"
+            android:layout_marginBottom="50dp"
             android:rotation="45"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintBottom_toBottomOf="parent" />

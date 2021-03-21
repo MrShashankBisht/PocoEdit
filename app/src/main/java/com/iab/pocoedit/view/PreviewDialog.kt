@@ -1,4 +1,4 @@
-package com.iab.photoeditor
+package com.iab.pocoedit.view
 
 import android.app.Activity
 import android.content.ContentResolver
@@ -15,8 +15,14 @@ import android.view.*
 import androidx.core.content.FileProvider
 import androidx.fragment.app.DialogFragment
 import com.bumptech.glide.Glide
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.iab.imagetext.model.ImageTextDataModel
-import com.iab.pocoedit.MainActivity.RequestCode.ACTION_REQUEST_EDITIMAGE
+import com.iab.photoeditor.ImageInfoDataModel
+import com.iab.photoeditor.getRealPathFromURI
+import com.iab.photoeditor.getTempFilename
+import com.iab.pocoedit.view.MainActivity.RequestCode.ACTION_REQUEST_EDITIMAGE
 import com.iab.pocoedit.R
 import com.iab.pocoedit.getImageInfoDataModel
 import iamutkarshtiwari.github.io.ananas.editimage.EditImageActivity
@@ -29,6 +35,7 @@ import java.lang.ref.WeakReference
 class PreviewDialog(context: Context, private var imageTextDataModel: ImageTextDataModel, private var previewImageDialogInterface: PreviewImageDialogInterface) : DialogFragment() {
     private var weakReferenceContext = WeakReference(context)
     private var fullPath:String? = null
+    lateinit var dialogAdView : AdView ;
     companion object {
         fun newInstance(context: Context, imageTextDataModel: ImageTextDataModel, previewImageDialogInterface: PreviewImageDialogInterface, title:String?): PreviewDialog {
             val frag = PreviewDialog(context, imageTextDataModel, previewImageDialogInterface)
@@ -49,10 +56,15 @@ class PreviewDialog(context: Context, private var imageTextDataModel: ImageTextD
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setUpAdView()
         setupView()
         setupClickListeners()
     }
 
+    fun setUpAdView(){
+        val adRequest = AdRequest.Builder().build()
+        preview_dialog_adView.loadAd(adRequest)
+    }
     override fun onStart() {
         super.onStart()
         dialog?.window?.setLayout(

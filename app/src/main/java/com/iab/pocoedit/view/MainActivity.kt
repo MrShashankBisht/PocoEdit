@@ -1,4 +1,4 @@
-package com.iab.pocoedit
+package com.iab.pocoedit.view
 
 
 import android.Manifest
@@ -18,14 +18,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.iab.galleryandlibrary.SpinnerGallery
 import com.iab.galleryandlibrary.librarry.presenter.LibraryPresenterImpl
 import com.iab.galleryandlibrary.librarry.presenter.LibraryPresenterInterface
 import com.iab.imagetext.model.ImageTextDataModel
-import com.iab.photoeditor.PreviewDialog
-import com.iab.photoeditor.PreviewImageDialogInterface
 import com.iab.photoeditor.createTempImageFile
 import com.iab.photoeditor.getRealPathFromURI
+import com.iab.pocoedit.R
 import iamutkarshtiwari.github.io.ananas.editimage.EditImageActivity.start
 import iamutkarshtiwari.github.io.ananas.editimage.ImageEditorIntentBuilder
 import kotlinx.android.synthetic.main.activity_main.*
@@ -33,9 +35,11 @@ import java.io.File
 import java.io.IOException
 
 
-class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListener, PreviewImageDialogInterface, ActivityCompat.OnRequestPermissionsResultCallback{
+class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListener,
+    PreviewImageDialogInterface, ActivityCompat.OnRequestPermissionsResultCallback{
 
     lateinit var libraryPresenterInterface: LibraryPresenterInterface
+    lateinit var mAdView: AdView
     var tempFileUri: Uri? = null
     var realPath:String? = null
     val TEMP_FILE_URI_STRING = "Temp_File_String"
@@ -52,6 +56,12 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+//        AdMob init
+        MobileAds.initialize(this) {}
+        mAdView = findViewById(R.id.main_activity_adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
 
         if (supportActionBar != null) {
             if (isSupportActionBarEnabled) {
@@ -62,8 +72,8 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
         }
 
         libraryPresenterInterface = LibraryPresenterImpl.newBuilder(
-                this,
-                this
+            this,
+            this
         )
                 .withSpanCount(2)
                 .withPaddingInRecyclerItem(5)
@@ -103,7 +113,7 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
                             Log.d("ImagePath", "" + it2)
                             val realPath = getRealPathFromURI(it2, this);
                             Log.d("ImagePath", "" + realPath)
-                            realPath?.let { it3 ->
+                            realPath.let { it3 ->
                                 startEditImageActivity(it3)
                             }
                         }
@@ -130,7 +140,12 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
 
     override fun onImageViewClicked(imageTextDataModel: ImageTextDataModel) {
         val fm = this.supportFragmentManager
-        val previewDialog = PreviewDialog.newInstance(this, imageTextDataModel, this, "Image Preview")
+        val previewDialog = PreviewDialog.newInstance(
+            this,
+            imageTextDataModel,
+            this,
+            "Image Preview"
+        )
         previewDialog.show(fm, "Preview_Image")
     }
 
@@ -185,9 +200,11 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
 //             Continue only if the File was successfully created
             if (photoFile != null) {
                 realPath = photoFile.absolutePath
-                tempFileUri = FileProvider.getUriForFile(this,
-                        "com.iab.photoeditor.provider",
-                        photoFile)
+                tempFileUri = FileProvider.getUriForFile(
+                    this,
+                    "com.iab.pocoedit.provider",
+                    photoFile
+                )
 //            tempFileUri = initImageSaving(this)
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, tempFileUri)
                 startActivityForResult(takePictureIntent, CAMERA_REQUEST_CODE)
@@ -204,11 +221,12 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
                 Log.d("document_id_2", "" + document_id)
                 it1.close()
                 context.contentResolver.query(
-                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                        null,
-                        MediaStore.Images.Media._ID + " = ? ",
-                        arrayOf(document_id),
-                        null)?.let { it2 ->
+                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                    null,
+                    MediaStore.Images.Media._ID + " = ? ",
+                    arrayOf(document_id),
+                    null
+                )?.let { it2 ->
                     it2.moveToFirst()
                     Log.d("coursor_count", "" + it2.count)
                     if (it2.count > 0) {
@@ -216,8 +234,8 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
                         val id = it2.getLong(it2.getColumnIndexOrThrow(MediaStore.Images.Media._ID))
                         // Add this to the Model
                         tempFileUri = ContentUris.withAppendedId(
-                                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                                id
+                            MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                            id
                         )
                         realPath = path
                     }
@@ -234,7 +252,7 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
     }
 
     private fun saveBitmapInFileSystem(): String? {
-        var filename:String? = null
+        val filename: String?
         try {
             val sdDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
             val pictureFileDir = File(sdDir, resources.getString(R.string.app_name))
@@ -262,7 +280,7 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
 
     private fun getOutputImagePath(): String? {
         var filename:String? = null
-        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.P){
+        if(Build.VERSION_CODES.P > Build.VERSION.SDK_INT){
             try {
                 val sdDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
                 val pictureFileDir = File(sdDir, resources.getString(R.string.app_name))
@@ -283,7 +301,9 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
                 e.printStackTrace()
             }
         }else{
-            val relativeLocation = Environment.DIRECTORY_DCIM + File.separator + resources.getString(R.string.app_name)
+            val relativeLocation = Environment.DIRECTORY_DCIM + File.separator + resources.getString(
+                R.string.app_name
+            )
             val contentValues = ContentValues()
             val photoFile = "Photo_" + System.currentTimeMillis() + ".png"
             contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, photoFile)
@@ -309,7 +329,7 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
         val audioCollection =
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                     MediaStore.Audio.Media.getContentUri(
-                            MediaStore.VOLUME_EXTERNAL_PRIMARY
+                        MediaStore.VOLUME_EXTERNAL_PRIMARY
                     )
                 } else {
                     MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
@@ -334,16 +354,20 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
     fun checkPermission(){
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.MANAGE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED) {
             // Permission is not granted
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                            Manifest.permission.MANAGE_EXTERNAL_STORAGE)) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(
+                    this,
+                    Manifest.permission.MANAGE_EXTERNAL_STORAGE
+                )) {
                 // Show an explanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
             } else {
                 // No explanation needed; request the permission
-                ActivityCompat.requestPermissions(this,
-                        arrayOf(Manifest.permission.MANAGE_EXTERNAL_STORAGE),
-                        WRITE_EXTERNAL_STORAGE);
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.MANAGE_EXTERNAL_STORAGE),
+                    WRITE_EXTERNAL_STORAGE
+                );
             }
         }
     }

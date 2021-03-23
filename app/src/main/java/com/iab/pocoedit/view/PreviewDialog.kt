@@ -15,9 +15,7 @@ import android.view.*
 import androidx.core.content.FileProvider
 import androidx.fragment.app.DialogFragment
 import com.bumptech.glide.Glide
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.*
 import com.iab.imagetext.model.ImageTextDataModel
 import com.iab.photoeditor.ImageInfoDataModel
 import com.iab.photoeditor.getRealPathFromURI
@@ -34,6 +32,7 @@ import java.lang.ref.WeakReference
 
 class PreviewDialog(context: Context, private var imageTextDataModel: ImageTextDataModel, private var previewImageDialogInterface: PreviewImageDialogInterface) : DialogFragment() {
     private var weakReferenceContext = WeakReference(context)
+    lateinit var mInterstitialAd: com.google.android.gms.ads.InterstitialAd
     private var fullPath:String? = null
     lateinit var dialogAdView : AdView ;
     companion object {
@@ -64,6 +63,36 @@ class PreviewDialog(context: Context, private var imageTextDataModel: ImageTextD
     fun setUpAdView(){
         val adRequest = AdRequest.Builder().build()
         preview_dialog_adView.loadAd(adRequest)
+
+//        initializing interstitial ads
+        mInterstitialAd = com.google.android.gms.ads.InterstitialAd(context)
+        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.loadAd(adRequest)
+
+        mInterstitialAd.adListener = object : AdListener(){
+            override fun onAdClosed() {
+                mInterstitialAd.loadAd(adRequest)
+                super.onAdClosed()
+            }
+
+            override fun onAdOpened() {
+                super.onAdOpened()
+            }
+
+            override fun onAdLoaded() {
+                super.onAdLoaded()
+            }
+
+            override fun onAdClicked() {
+                mInterstitialAd.loadAd(adRequest)
+                super.onAdClicked()
+            }
+
+            override fun onAdImpression() {
+                super.onAdImpression()
+            }
+        }
+
     }
     override fun onStart() {
         super.onStart()
@@ -131,7 +160,7 @@ class PreviewDialog(context: Context, private var imageTextDataModel: ImageTextD
 //                    getRealPathFromURI(data!!.data!!, this)
         weakReferenceContext.get()?.let {
             val intent = ImageEditorIntentBuilder(weakReferenceContext.get()!!, imageTextDataModel.imageUri?.let { it1 -> getRealPathFromURI(it1, weakReferenceContext.get()!!) }, getTempFilename(weakReferenceContext.get()!!))
-                .withAddText()
+//                .withAddText()
                 .withPaintFeature()
                 .withFilterFeature()
                 .withRotateFeature()
@@ -147,6 +176,11 @@ class PreviewDialog(context: Context, private var imageTextDataModel: ImageTextD
                 .build()
 
             EditImageActivity.start(weakReferenceContext.get() as Activity, intent, ACTION_REQUEST_EDITIMAGE)
+            if(mInterstitialAd.isLoaded){
+                mInterstitialAd.show()
+            }else{
+                mInterstitialAd.loadAd(AdRequest.Builder().build())
+            }
             this.dismiss()
         }
     }

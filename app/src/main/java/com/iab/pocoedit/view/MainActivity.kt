@@ -18,9 +18,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.iab.galleryandlibrary.SpinnerGallery
 import com.iab.galleryandlibrary.librarry.presenter.LibraryPresenterImpl
 import com.iab.galleryandlibrary.librarry.presenter.LibraryPresenterInterface
@@ -40,6 +42,7 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
 
     lateinit var libraryPresenterInterface: LibraryPresenterInterface
     lateinit var mAdView: AdView
+    lateinit var mInterstitialAd: com.google.android.gms.ads.InterstitialAd
     var tempFileUri: Uri? = null
     var realPath:String? = null
     val TEMP_FILE_URI_STRING = "Temp_File_String"
@@ -56,12 +59,6 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        AdMob init
-        MobileAds.initialize(this) {}
-        mAdView = findViewById(R.id.main_activity_adView)
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
-
 
         if (supportActionBar != null) {
             if (isSupportActionBarEnabled) {
@@ -70,6 +67,41 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
                 supportActionBar!!.hide()
             }
         }
+
+//        AdMob init
+        MobileAds.initialize(this) {}
+//        initializing interstitial ads
+        mInterstitialAd = com.google.android.gms.ads.InterstitialAd(this)
+        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
+
+        mInterstitialAd.adListener = object : AdListener(){
+            override fun onAdClosed() {
+                mInterstitialAd.loadAd(AdRequest.Builder().build())
+                super.onAdClosed()
+            }
+
+            override fun onAdOpened() {
+                super.onAdOpened()
+            }
+
+            override fun onAdLoaded() {
+                super.onAdLoaded()
+            }
+
+            override fun onAdClicked() {
+                mInterstitialAd.loadAd(AdRequest.Builder().build())
+                super.onAdClicked()
+            }
+
+            override fun onAdImpression() {
+                super.onAdImpression()
+            }
+        }
+//        initializing banner ads
+        mAdView = findViewById(R.id.main_activity_adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
 
         libraryPresenterInterface = LibraryPresenterImpl.newBuilder(
             this,
@@ -173,7 +205,7 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
 //                    .setSupportActionBarVisibility(false)
 //                    .build()
             val intent = ImageEditorIntentBuilder(this, realPath, it)
-                .withAddText()
+//                .withAddText()
                 .withPaintFeature()
                 .withFilterFeature()
                 .withRotateFeature()
@@ -184,6 +216,11 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
                 .setSupportActionBarVisibility(false)
                 .build()
             start(this, intent, ACTION_REQUEST_EDITIMAGE)
+            if(mInterstitialAd.isLoaded){
+                mInterstitialAd.show()
+            }else{
+                mInterstitialAd.loadAd(AdRequest.Builder().build())
+            }
         }
     }
 

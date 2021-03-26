@@ -1,2 +1,2 @@
-include ':app', ':GalleryAndLibraryAndroidModule', ':Editor-Android-Module',':ImageTextModule'
+include ':app', ':GalleryAndLibraryAndroidModule', ':Editor-Android-Module',':ImageTextModule', ':Android_Module_PermissionDialog'
 rootProject.name = "PocoEdit"

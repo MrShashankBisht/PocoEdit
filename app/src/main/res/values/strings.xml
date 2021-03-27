@@ -1,15 +1,27 @@
 <resources>
     <string name="app_name">PocoEdit</string>
     <string name="full_path">Full Path:</string>
-
+    <string name="file">Storage</string>
+    <string name="file_description">For saving image and show all images we need storage permission</string>
+    <string name="camera_description">For clicking image we need camera permission </string>
+    <string name="permission_text">Permission</string>
+    <string name="permission_sub_text"> This app need following permission to run, please grant following permission</string>
+    <string name="permission_note"><![CDATA[Note : For grant permission go to settings --> app --> PocoEdit --> permissions ]]></string>
+    <string name="title">title</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="exit_dialog_title">Exit Dialog</string>
+    <string name="exit_dialog_message">"Do you really want to exit !! "</string>
 
 <!--   test AdMob id -->
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
     <string name="app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
     <string name="interstitial_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
 
-<!-- Production AdMob_ID-->
+
+    <!-- Production AdMob_ID-->
 <!--    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-7184144287523649/2502837193</string>-->
 <!--    <string name="app_id" translatable="false">ca-app-pub-7184144287523649~7912056482</string>-->
 <!--    <string name="interstitial_ad_unit_id" translatable="false">ca-app-pub-7184144287523649/8685102160</string>-->
+
 </resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PocoEdit</string>
+    <string name="app_name" translatable="false">PocoEdit</string>
     <string name="full_path">Full Path:</string>
     <string name="file">Storage</string>
     <string name="file_description">For saving image and show all images we need storage permission</string>

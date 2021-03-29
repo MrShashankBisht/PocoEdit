@@ -90,7 +90,7 @@ fun getImageInfoDataModel(
             imageInfoDataModel.name = name!!
             imageInfoDataModel.size = size
             imageInfoDataModel.dimension = Size(width!!.toFloat(), length!!.toFloat())
-            imageInfoDataModel.setDate(date)
+            date?.let { imageInfoDataModel.setDate(it) }
             imageInfoDataModel.bucketName = bucketName!!
             imageInfoDataModel.fullPath = path
             return imageInfoDataModel

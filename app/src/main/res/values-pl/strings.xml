@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocoEdit</string>
+    <string name="full_path"> Pełna ścieżka:</string>
+    <string name="file">Przechowywanie </string>
+    <string name="file_description">Aby zapisać obraz i pokazać wszystkie obrazy, potrzebujemy pozwolenia na przechowywanie</string>
+    <string name="camera_description">Do kliknięcia obrazu potrzebujemy pozwolenia kamery</string>
+    <string name="permission_text">Pozwolenie</string>
+    <string name="permission_sub_text">Ta aplikacja wymaga następujących uprawnień do uruchomienia. Udziel następujących uprawnień</string>
+    <string name="permission_note">Aby przyznać uprawnienia, przejdź do ustawień -> aplikacja -> PocoEdit -> uprawnienia</string>
+    <string name="title">tytuł</string>
+    <string name="yes">tak</string>
+    <string name="no">Nie</string>
+    <string name="exit_dialog_title">Zamknij okno dialogowe</string>
+    <string name="exit_dialog_message">"Czy naprawdę chcesz wyjść !! "</string>
+</resources>

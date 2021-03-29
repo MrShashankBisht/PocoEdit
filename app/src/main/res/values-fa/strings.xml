@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocoEdit</string>
+    <string name="full_path"> مسیر کامل:</string>
+<string name="file"> ذخیره سازی</string>
+<string name="file_description">برای ذخیره تصویر و نمایش همه تصاویر ، به مجوز ذخیره سازی نیاز داریم</string>
+<string name="camera_description">برای کلیک کردن روی تصویر ، به مجوز دوربین نیاز داریم</string>
+<string name="permission_text">اجازه</string>
+<string name="permission_sub_text">این برنامه برای اجرا به مجوز زیر احتیاج دارد ، لطفاً مجوز زیر را بدهید</string>
+<string name="permission_note">برای مجوز اعطا به تنظیمات -> برنامه -> PocoEdit -> مجوزها بروید</string>
+<string name="title">عنوان</string>
+<string name="yes">آره</string>
+<string name="no">نه</string>
+<string name="exit_dialog_title">خروج از گفتگو</string>
+<string name="exit_dialog_message">"آیا واقعاً می خواهید خارج شوید !!"</string>
+</resources>

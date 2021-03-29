@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocoEdit</string>
+    <string name="full_path">সম্পূর্ণ পথ: </string>
+    <string name="file">স্টোরেজ </string>
+    <string name="file_description">চিত্র সংরক্ষণ এবং সমস্ত চিত্র দেখানোর জন্য আমাদের স্টোরেজের অনুমতি প্রয়োজন</string>
+    <string name="camera_description">ছবিতে ক্লিক করার জন্য আমাদের ক্যামেরার অনুমতি প্রয়োজন</string>
+    <string name="permission_text">অনুমতি</string>
+    <string name="permission_sub_text">এই অ্যাপ্লিকেশনটি চালানোর জন্য নিম্নলিখিত অনুমতি প্রয়োজন, দয়া করে নিম্নলিখিত অনুমতিটি প্রদান করুন</string>
+    <string name="permission_note">অনুদানের অনুমতিের জন্য সেটিংস -> অ্যাপ -> পোকো এডিট -> অনুমতিগুলিতে যান</string>
+    <string name="title">শিরোনাম</string>
+    <string name="yes">হ্যাঁ</string>
+    <string name="no">না</string>
+    <string name="exit_dialog_title">প্রস্থান ডায়ালগ</string>
+    <string name="exit_dialog_message">"আপনি কি সত্যিই প্রস্থান করতে চান !!"</string>
+</resources>

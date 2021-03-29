@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocoEdit</string>
+    <string name="full_path"> Đường dẫn đầy đủ:</string>
+    <string name="file"> Lưu trữ</string>
+    <string name="file_description">Để lưu hình ảnh và hiển thị tất cả hình ảnh, chúng tôi cần quyền lưu trữ</string>
+    <string name="camera_description">Để nhấp vào hình ảnh, chúng tôi cần sự cho phép của máy ảnh</string>
+    <string name="permission_text">Sự cho phép</string>
+    <string name="permission_sub_text">Ứng dụng này cần có quyền sau để chạy, vui lòng cấp quyền sau</string>
+    <string name="permission_note">Để cấp quyền truy cập vào cài đặt -> ứng dụng -> PocoEdit -> quyền</string>
+    <string name="title">tiêu đề</string>
+    <string name="yes">Đúng</string>
+    <string name="no">Không</string>
+    <string name="exit_dialog_title">Hộp thoại Thoát</string>
+    <string name="exit_dialog_message">"Bạn có thực sự muốn thoát !! "</string>
+</resources>

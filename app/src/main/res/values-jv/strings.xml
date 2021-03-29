@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocoEdit</string>
+    <string name="full_path"> Path Lengkap:</string>
+    <string name="file"> Panyimpenan</string>
+    <string name="file_description">Kanggo nyimpen gambar lan nuduhake kabeh gambar, kita butuh ijin panyimpenan</string>
+    <string name="camera_description">Kanggo ngeklik gambar, kita butuh ijin kamera</string>
+    <string name="permission_text">Idin</string>
+    <string name="permission_sub_text">Aplikasi iki kudu diidini kanggo mbukak, mangga ijin ing ngisor iki</string>
+    <string name="permission_note">Kanggo ijin hibah, bukak setelan -> app -> PocoEdit -> ijin</string>
+    <string name="title">judhul</string>
+    <string name="yes">Nggih</string>
+    <string name="no">Ora</string>
+    <string name="exit_dialog_title">Dialog Metu</string>
+    <string name="exit_dialog_message">"Apa kowe pancen pengin metu !!"</string>
+</resources>

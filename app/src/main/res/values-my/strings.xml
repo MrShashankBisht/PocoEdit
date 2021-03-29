@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocoEdit</string>
+    <string name="full_path">လမ်းကြောင်းအပြည့်: </string>
+    <string name="file">သိုလှောင်ခြင်း </string>
+    <string name="file_description">ပုံကိုသိမ်းရန်နှင့်ပုံအားလုံးကိုပြရန်ကျွန်ုပ်တို့သည်သိုလှောင်မှုခွင့်ပြုချက်လိုအပ်သည်</string>
+    <string name="camera_description">ပုံကိုနှိပ်ရန်အတွက်ကျွန်ုပ်တို့သည်ကင်မရာခွင့်ပြုချက်လိုအပ်သည်</string>
+    <string name="permission_text">ခွင့်ပြုချက်</string>
+    <string name="permission_sub_text">ဤအက်ပလီကေးရှင်းကိုအသုံးပြုရန်အတွက်အောက်ပါခွင့်ပြုချက်လိုအပ်သည်။ ကျေးဇူးပြု၍ အောက်ပါခွင့်ပြုချက်ကိုပေးပါ</string>
+    <string name="permission_note">ထောက်ပံ့ကြေးခွင့်ပြုချက်အတွက် settings -> app -> PocoEdit -> ခွင့်ပြုချက်များသို့သွားပါ</string>
+    <string name="title">ခေါင်းစဥ်</string>
+    <string name="yes">ဟုတ်တယ်</string>
+    <string name="no">မဟုတ်ဘူး</string>
+    <string name="exit_dialog_title">Dialog မှထွက်ပါ</string>
+    <string name="exit_dialog_message">"မင်းတကယ်ထွက်ချင်တာလား !!"</string>
+</resources>

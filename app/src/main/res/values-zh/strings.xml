@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocoEdit</string>
+    <string name="full_path"> 完整路径：</string>
+    <string name="file"> 贮存</string>
+    <string name="file_description">要保存图像并显示所有图像，我们需要存储权限</string>
+    <string name="camera_description">点击图片需要相机许可</string>
+    <string name="permission_text">允许</string>
+    <string name="permission_sub_text">该应用需要以下权限才能运行，请授予以下权限</string>
+    <string name="permission_note">对于授予权限，请转到设置->应用程序-> PocoEdit->权限</string>
+    <string name="title">标题</string>
+    <string name="yes">是的</string>
+    <string name="no">不</string>
+    <string name="exit_dialog_title">退出对话框</string>
+    <string name="exit_dialog_message">“你真的想退出！！”</string>
+</resources>
+
+
+

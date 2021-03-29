@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocoEdit</string>
+    <string name="full_path"> ಪೂರ್ಣ ಹಾದಿ:</string>
+    <string name="file">ಸಂಗ್ರಹಣೆ </string>
+    <string name="file_description">ಚಿತ್ರವನ್ನು ಉಳಿಸಲು ಮತ್ತು ಎಲ್ಲಾ ಚಿತ್ರಗಳನ್ನು ತೋರಿಸಲು ನಮಗೆ ಶೇಖರಣಾ ಅನುಮತಿ ಬೇಕು</string>
+    <string name="camera_description">ಚಿತ್ರ ಕ್ಲಿಕ್ ಮಾಡಲು ನಮಗೆ ಕ್ಯಾಮೆರಾ ಅನುಮತಿ ಬೇಕು</string>
+    <string name="permission_text">ಅನುಮತಿ</string>
+    <string name="permission_sub_text">ಈ ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಚಲಾಯಿಸಲು ಈ ಕೆಳಗಿನ ಅನುಮತಿ ಬೇಕು, ದಯವಿಟ್ಟು ಈ ಕೆಳಗಿನ ಅನುಮತಿಯನ್ನು ನೀಡಿ</string>
+    <string name="permission_note">ಅನುದಾನ ಅನುಮತಿಗಾಗಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳು -> ಅಪ್ಲಿಕೇಶನ್ -> ಪೊಕೊ ಎಡಿಟ್ -> ಅನುಮತಿಗಳಿಗೆ ಹೋಗಿ</string>
+    <string name="title">ಶೀರ್ಷಿಕೆ</string>
+    <string name="yes">ಹೌದು</string>
+    <string name="no">ಇಲ್ಲ</string>
+    <string name="exit_dialog_title">ಡೈಲಾಗ್‌ನಿಂದ ನಿರ್ಗಮಿಸಿ</string>
+    <string name="exit_dialog_message">"ನೀವು ನಿಜವಾಗಿಯೂ ನಿರ್ಗಮಿಸಲು ಬಯಸುವಿರಾ !!"</string>
+</resources>

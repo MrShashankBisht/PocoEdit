@@ -9,8 +9,8 @@ public class ImageInfoDataModel{
     var bucketName: String = ""
     var fullPath:String = ""
 
-    fun setDate(dateTime :String?){
-        date = dateTime ?: "No data found"
+    fun setDate(dateTime :String = ""){
+        date = dateTime
     }
     fun getDate():String{
         return date

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocoEdit</string>
+    <string name="full_path"> مکمل راستہ:</string>
+<string name="file"> ذخیرہ</string>
+<string name="file_description">تصویر کو بچانے اور تمام تصاویر کو دکھانے کے لئے ہمیں اسٹوریج کی اجازت کی ضرورت ہے</string>
+<string name="camera_description">تصویر پر کلک کرنے کے لئے ہمیں کیمرے کی اجازت درکار ہے</string>
+<string name="permission_text">اجازت</string>
+<string name="permission_sub_text">اس ایپ کو چلانے کے لئے مندرجہ ذیل اجازت کی ضرورت ہے ، براہ کرم مندرجہ ذیل اجازت دیں</string>
+<string name="permission_note">گرانٹ کی اجازت کے لئے ترتیبات -> ایپ -> پوکو ایڈٹ -> اجازتوں پر جائیں</string>
+<string name="title">عنوان</string>
+<string name="yes">جی ہاں</string>
+<string name="no">نہیں</string>
+<string name="exit_dialog_title">ایگزٹ ڈائیلاگ</string>
+<string name="exit_dialog_message">"کیا آپ واقعی باہر نکلنا چاہتے ہیں !!"</string>
+</resources>

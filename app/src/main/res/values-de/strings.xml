@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocoEdit</string>
+    <string name="full_path">Vollständigen Pfad: </string>
+    <string name="file">Lager </string>
+    <string name="file_description">Zum Speichern von Bildern und zum Anzeigen aller Bilder benötigen wir eine Speichererlaubnis</string>
+    <string name="camera_description">Zum Klicken auf das Bild benötigen wir eine Kameraerlaubnis</string>
+    <string name="permission_text">Genehmigung</string>
+    <string name="permission_sub_text">Diese App benötigt die folgende Berechtigung zum Ausführen. Bitte erteilen Sie die folgende Berechtigung</string>
+    <string name="permission_note">Um eine Berechtigung zu erteilen, gehen Sie zu Einstellungen -> App -> PocoEdit -> Berechtigungen</string>
+    <string name="title">Titel</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="exit_dialog_title">Dialog beenden</string>
+    <string name="exit_dialog_message">"Willst du wirklich gehen !! "</string>
+</resources>

@@ -31,6 +31,7 @@ import com.iab.galleryandlibrary.librarry.presenter.LibraryPresenterInterface
 import com.iab.imagetext.model.ImageTextDataModel
 import com.iab.photoeditor.createTempImageFile
 import com.iab.photoeditor.getRealPathFromURI
+import com.iab.pocoedit.Privacy
 import com.iab.pocoedit.R
 import com.msl.permission_dialog.PermissionPresenterImpl
 import com.msl.permission_dialog.PermissionPresenterInterface
@@ -122,6 +123,11 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
                 supportActionBar!!.hide()
             }
         }
+
+    main_privacy_btn.setOnClickListener {
+        val intent = Intent(this, Privacy::class.java)
+        startActivity(intent)
+    }
 
 
 //        AdMob init

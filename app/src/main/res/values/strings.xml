@@ -14,10 +14,10 @@
     <string name="exit_dialog_title">Exit Dialog</string>
     <string name="exit_dialog_message">"Do you really want to exit !! "</string>
 
-<!--   test AdMob id -->
-<!--    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
-<!--    <string name="app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>-->
-<!--    <string name="interstitial_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>-->
+    <!--   test AdMob id -->
+    <!--    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
+    <!--    <string name="app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>-->
+    <!--    <string name="interstitial_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>-->
 
 
     <!-- Production AdMob_ID-->

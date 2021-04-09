@@ -34,7 +34,7 @@ class PreviewDialog(context: Context, private var imageTextDataModel: ImageTextD
     private var weakReferenceContext = WeakReference(context)
     lateinit var mInterstitialAd: com.google.android.gms.ads.InterstitialAd
     private var fullPath:String? = null
-    lateinit var dialogAdView : AdView ;
+    lateinit var dialogAdView : AdView;
     companion object {
         fun newInstance(context: Context, imageTextDataModel: ImageTextDataModel, previewImageDialogInterface: PreviewImageDialogInterface, title:String?): PreviewDialog {
             val frag = PreviewDialog(context, imageTextDataModel, previewImageDialogInterface)
@@ -66,7 +66,7 @@ class PreviewDialog(context: Context, private var imageTextDataModel: ImageTextD
 
 //        initializing interstitial ads
         mInterstitialAd = com.google.android.gms.ads.InterstitialAd(context)
-        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.adUnitId = getString(R.string.interstitial_ad_unit_id)
         mInterstitialAd.loadAd(adRequest)
 
         mInterstitialAd.adListener = object : AdListener(){

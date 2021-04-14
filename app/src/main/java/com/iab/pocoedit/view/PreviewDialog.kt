@@ -160,10 +160,10 @@ class PreviewDialog(context: Context, private var imageTextDataModel: ImageTextD
 //                    getRealPathFromURI(data!!.data!!, this)
         weakReferenceContext.get()?.let {
             val intent = ImageEditorIntentBuilder(weakReferenceContext.get()!!, imageTextDataModel.imageUri?.let { it1 -> getRealPathFromURI(it1, weakReferenceContext.get()!!) }, getTempFilename(weakReferenceContext.get()!!))
-//                .withAddText()
+                .withAddText()
                 .withPaintFeature()
                 .withFilterFeature()
-                .withRotateFeature()
+//                .withRotateFeature()
                 .withCropFeature()
 //                    .withBrightnessFeature()
 //                    .withSaturationFeature()

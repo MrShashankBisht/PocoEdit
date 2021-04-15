@@ -255,7 +255,9 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         realPath = savedInstanceState.getString(TEMP_FILE_URI_STRING)
-        tempFileUri = Uri.parse(realPath)
+        if(realPath != null){
+            tempFileUri = Uri.parse(realPath)
+        }
         super.onRestoreInstanceState(savedInstanceState)
     }
 

@@ -8,7 +8,6 @@
     <string name="permission_text">Pozwolenie</string>
     <string name="permission_sub_text">Ta aplikacja wymaga następujących uprawnień do uruchomienia. Udziel następujących uprawnień</string>
     <string name="permission_note">Aby przyznać uprawnienia, przejdź do ustawień -> aplikacja -> PocoEdit -> uprawnienia</string>
-    <string name="title">tytuł</string>
     <string name="yes">tak</string>
     <string name="no">Nie</string>
     <string name="exit_dialog_title">Zamknij okno dialogowe</string>

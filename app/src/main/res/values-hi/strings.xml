@@ -8,7 +8,6 @@
     <string name="permission_text">अनुमति</string>
     <string name="permission_sub_text">इस एप्लिकेशन को चलाने के लिए निम्नलिखित अनुमति की आवश्यकता है, कृपया निम्नलिखित अनुमति प्रदान करें</string>
     <string name="permission_note">अनुदान अनुमति के लिए सेटिंग्स -> ऐप -> पोकोएडिट -> अनुमति पर जाएं</string>
-    <string name="title">शीर्षक</string>
     <string name="yes">हाँ</string>
     <string name="no">नहीं न</string>
     <string name="exit_dialog_title">डायलॉग से बाहर निकलें</string>

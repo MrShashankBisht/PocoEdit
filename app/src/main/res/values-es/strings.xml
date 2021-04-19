@@ -8,7 +8,6 @@
     <string name="permission_text">Permiso</string>
     <string name="permission_sub_text">Esta aplicación necesita el siguiente permiso para ejecutarse, conceda el siguiente permiso</string>
     <string name="permission_note">Para otorgar permiso, vaya a configuración -> aplicación -> PocoEdit -> permisos</string>
-    <string name="title">título</string>
     <string name="yes">sí</string>
     <string name="no">No</string>
     <string name="exit_dialog_title">Diálogo de salida</string>

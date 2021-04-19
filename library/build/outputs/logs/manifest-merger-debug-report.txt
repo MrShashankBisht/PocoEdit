@@ -1,0 +1,37 @@
+-- Merging decision tree log ---
+manifest
+ADDED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml:2:1-57
+INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml:2:1-57
+INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml:2:1-57
+INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml:2:1-57
+INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml:2:1-57
+INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml:2:1-57
+INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml:2:1-57
+	package
+		ADDED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml:2:11-54
+		INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+		INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+		ADDED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml:2:1-57
+		INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml:2:1-57
+	android:versionCode
+		INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+		ADDED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml:2:1-57
+		INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+uses-sdk
+INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+		ADDED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+		INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+		ADDED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml
+		INJECTED from F:\AndroidExample\PocoEdit\library\src\main\AndroidManifest.xml

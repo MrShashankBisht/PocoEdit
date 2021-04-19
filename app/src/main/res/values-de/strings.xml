@@ -8,7 +8,6 @@
     <string name="permission_text">Genehmigung</string>
     <string name="permission_sub_text">Diese App benötigt die folgende Berechtigung zum Ausführen. Bitte erteilen Sie die folgende Berechtigung</string>
     <string name="permission_note">Um eine Berechtigung zu erteilen, gehen Sie zu Einstellungen -> App -> PocoEdit -> Berechtigungen</string>
-    <string name="title">Titel</string>
     <string name="yes">Ja</string>
     <string name="no">Nein</string>
     <string name="exit_dialog_title">Dialog beenden</string>

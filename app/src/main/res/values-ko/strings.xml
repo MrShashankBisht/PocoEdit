@@ -8,7 +8,6 @@
     <string name="permission_text">허가</string>
     <string name="permission_sub_text">이 앱을 실행하려면 다음 권한이 필요합니다. 다음 권한을 부여하세요.</string>
     <string name="permission_note">권한을 부여하려면 설정-> 앱-> PocoEdit-> 권한으로 이동하십시오.</string>
-    <string name="title">표제</string>
     <string name="yes">예</string>
     <string name="no">아니</string>
     <string name="exit_dialog_title">대화 종료</string>

@@ -8,7 +8,6 @@
     <string name="permission_text">Permission</string>
     <string name="permission_sub_text"> This app need following permission to run, please grant following permission</string>
     <string name="permission_note"><![CDATA[Note : For grant permission go to settings --> app --> PocoEdit --> permissions ]]></string>
-    <string name="title">title</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="exit_dialog_title">Exit Dialog</string>

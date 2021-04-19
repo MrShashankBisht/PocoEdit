@@ -8,7 +8,6 @@
     <string name="permission_text">İzin</string>
     <string name="permission_sub_text">Bu uygulamanın çalışması için aşağıdaki izne ihtiyaç var, lütfen aşağıdaki izni verin</string>
     <string name="permission_note">İzin vermek için ayarlar -> uygulama -> PocoEdit -> izinler bölümüne gidin</string>
-    <string name="title">Başlık</string>
     <string name="yes">Evet</string>
     <string name="no">Hayır</string>
     <string name="exit_dialog_title">İletişim Kutusundan Çık</string>

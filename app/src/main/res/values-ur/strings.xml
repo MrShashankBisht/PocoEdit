@@ -8,8 +8,7 @@
 <string name="permission_text">اجازت</string>
 <string name="permission_sub_text">اس ایپ کو چلانے کے لئے مندرجہ ذیل اجازت کی ضرورت ہے ، براہ کرم مندرجہ ذیل اجازت دیں</string>
 <string name="permission_note">گرانٹ کی اجازت کے لئے ترتیبات -> ایپ -> پوکو ایڈٹ -> اجازتوں پر جائیں</string>
-<string name="title">عنوان</string>
-<string name="yes">جی ہاں</string>
+    <string name="yes">جی ہاں</string>
 <string name="no">نہیں</string>
 <string name="exit_dialog_title">ایگزٹ ڈائیلاگ</string>
 <string name="exit_dialog_message">"کیا آپ واقعی باہر نکلنا چاہتے ہیں !!"</string>

@@ -8,7 +8,6 @@
     <string name="permission_text">അനുമതി</string>
     <string name="permission_sub_text">ഈ അപ്ലിക്കേഷൻ പ്രവർത്തിപ്പിക്കുന്നതിന് ഇനിപ്പറയുന്ന അനുമതി ആവശ്യമാണ്, ദയവായി ഇനിപ്പറയുന്ന അനുമതി നൽകുക</string>
     <string name="permission_note">ഗ്രാന്റ് അനുമതിക്കായി ക്രമീകരണങ്ങൾ -> അപ്ലിക്കേഷൻ -> പോക്കോഎഡിറ്റ് -> അനുമതികളിലേക്ക് പോകുക</string>
-    <string name="title">ശീർഷകം</string>
     <string name="yes">അതെ</string>
     <string name="no">ഇല്ല</string>
     <string name="exit_dialog_title">ഡയലോഗിൽ നിന്ന് പുറത്തുകടക്കുക</string>

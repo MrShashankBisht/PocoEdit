@@ -8,7 +8,6 @@
     <string name="permission_text">Sự cho phép</string>
     <string name="permission_sub_text">Ứng dụng này cần có quyền sau để chạy, vui lòng cấp quyền sau</string>
     <string name="permission_note">Để cấp quyền truy cập vào cài đặt -> ứng dụng -> PocoEdit -> quyền</string>
-    <string name="title">tiêu đề</string>
     <string name="yes">Đúng</string>
     <string name="no">Không</string>
     <string name="exit_dialog_title">Hộp thoại Thoát</string>

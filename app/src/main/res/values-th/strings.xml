@@ -8,7 +8,6 @@
     <string name="permission_text">สิทธิ์</string>
     <string name="permission_sub_text">แอพนี้ต้องได้รับอนุญาตดังต่อไปนี้ในการทำงานโปรดให้สิทธิ์ต่อไปนี้</string>
     <string name="permission_note">สำหรับการอนุญาตให้ไปที่การตั้งค่า -> แอป -> PocoEdit -> การอนุญาต</string>
-    <string name="title">หัวข้อ</string>
     <string name="yes">ใช่</string>
     <string name="no">ไม่</string>
     <string name="exit_dialog_title">ออกจากกล่องโต้ตอบ</string>

@@ -38,11 +38,11 @@ import com.msl.permission_dialog.PermissionPresenterInterface
 import com.msl.permission_dialog.PermissionPresenterInterface.PermissionListener
 import com.msl.permission_dialog.PermissionViewDataModel
 import com.msl.permission_dialog.permissiondiscriptiv.PermissionDescriptiveDataModel
-import iamutkarshtiwari.github.io.ananas.editimage.EditImageActivity.start
-import iamutkarshtiwari.github.io.ananas.editimage.ImageEditorIntentBuilder
-import iamutkarshtiwari.github.io.ananas.general_dialog.GeneralDialogPresenterImpl
-import iamutkarshtiwari.github.io.ananas.general_dialog.GeneralDialogPresenterInterface
-import iamutkarshtiwari.github.io.ananas.general_dialog.GenrealDialogDataModel
+import com.iab.pocoedit.editor.editimage.EditImageActivity.start
+import com.iab.pocoedit.editor.editimage.ImageEditorIntentBuilder
+import com.iab.pocoedit.editor.general_dialog.GeneralDialogPresenterImpl
+import com.iab.pocoedit.editor.general_dialog.GeneralDialogPresenterInterface
+import com.iab.pocoedit.editor.general_dialog.GenrealDialogDataModel
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.io.IOException
@@ -356,7 +356,7 @@ class MainActivity : AppCompatActivity(), LibraryPresenterInterface.LibraryListe
                 .withAddText()
                 .withPaintFeature()
                 .withFilterFeature()
-//                .withRotateFeature()
+                .withAdjustImage()
                 .withCropFeature()
                 .withEditorTitle("Photo Editor")
                 .withBucketName(resources.getString(R.string.app_name))

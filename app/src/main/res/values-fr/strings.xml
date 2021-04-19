@@ -8,7 +8,6 @@
     <string name="permission_text">Autorisation</string>
     <string name="permission_sub_text">Cette application nécessite l\'autorisation suivante pour s\'exécuter, veuillez accorder l\'autorisation suivante</string>
     <string name="permission_note">Pour accorder l\'autorisation, accédez aux paramètres -> application -> PocoEdit -> autorisations</string>
-    <string name="title">Titre</string>
     <string name="yes">Oui</string>
     <string name="no">Non</string>
     <string name="exit_dialog_title">Quitter la boîte de dialogue</string>

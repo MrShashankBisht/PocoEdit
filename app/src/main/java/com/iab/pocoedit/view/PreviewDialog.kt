@@ -23,8 +23,8 @@ import com.iab.photoeditor.getTempFilename
 import com.iab.pocoedit.view.MainActivity.RequestCode.ACTION_REQUEST_EDITIMAGE
 import com.iab.pocoedit.R
 import com.iab.pocoedit.getImageInfoDataModel
-import iamutkarshtiwari.github.io.ananas.editimage.EditImageActivity
-import iamutkarshtiwari.github.io.ananas.editimage.ImageEditorIntentBuilder
+import com.iab.pocoedit.editor.editimage.EditImageActivity
+import com.iab.pocoedit.editor.editimage.ImageEditorIntentBuilder
 import kotlinx.android.synthetic.main.preview_dialog_layout.*
 import java.io.File
 import java.lang.ref.WeakReference
@@ -163,12 +163,8 @@ class PreviewDialog(context: Context, private var imageTextDataModel: ImageTextD
                 .withAddText()
                 .withPaintFeature()
                 .withFilterFeature()
-//                .withRotateFeature()
                 .withCropFeature()
-//                    .withBrightnessFeature()
-//                    .withSaturationFeature()
-//                    .withBeautyFeature()
-//                    .withStickerFeature()
+                .withAdjustImage()
                 .withEditorTitle("Photo Editor")
                 .withBucketName(resources.getString(R.string.app_name))
                 .forcePortrait(true)

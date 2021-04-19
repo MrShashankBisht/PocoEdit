@@ -8,7 +8,6 @@
     <string name="permission_text">ಅನುಮತಿ</string>
     <string name="permission_sub_text">ಈ ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಚಲಾಯಿಸಲು ಈ ಕೆಳಗಿನ ಅನುಮತಿ ಬೇಕು, ದಯವಿಟ್ಟು ಈ ಕೆಳಗಿನ ಅನುಮತಿಯನ್ನು ನೀಡಿ</string>
     <string name="permission_note">ಅನುದಾನ ಅನುಮತಿಗಾಗಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳು -> ಅಪ್ಲಿಕೇಶನ್ -> ಪೊಕೊ ಎಡಿಟ್ -> ಅನುಮತಿಗಳಿಗೆ ಹೋಗಿ</string>
-    <string name="title">ಶೀರ್ಷಿಕೆ</string>
     <string name="yes">ಹೌದು</string>
     <string name="no">ಇಲ್ಲ</string>
     <string name="exit_dialog_title">ಡೈಲಾಗ್‌ನಿಂದ ನಿರ್ಗಮಿಸಿ</string>

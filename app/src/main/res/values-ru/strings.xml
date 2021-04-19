@@ -8,7 +8,6 @@
     <string name="permission_text">Разрешение</string>
     <string name="permission_sub_text">Для запуска этого приложения требуется следующее разрешение, пожалуйста, предоставьте следующее разрешение</string>
     <string name="permission_note">Для предоставления разрешения перейдите в настройки -> приложение -> PocoEdit -> разрешения</string>
-    <string name="title">заглавие</string>
     <string name="yes">да</string>
     <string name="no">Нет</string>
     <string name="exit_dialog_title">Выход из диалогового окна</string>

@@ -7,7 +7,6 @@
     <string name="permission_text">الإذن</string>
     <string name="permission_sub_text">يحتاج هذا التطبيق إلى الإذن التالي للتشغيل ، يرجى منح الإذن التالي</string>
     <string name="permission_note">للحصول على إذن ، انتقل إلى الإعدادات -> التطبيق -> PocoEdit -> الأذونات </string>
-    <string name="title">لقب</string>
     <string name="yes">نعم</string>
     <string name="no">لا</string>
     <string name="exit_dialog_title">الخروج من مربع الحوار</string>

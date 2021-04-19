@@ -8,7 +8,6 @@
     <string name="permission_text">অনুমতি</string>
     <string name="permission_sub_text">এই অ্যাপ্লিকেশনটি চালানোর জন্য নিম্নলিখিত অনুমতি প্রয়োজন, দয়া করে নিম্নলিখিত অনুমতিটি প্রদান করুন</string>
     <string name="permission_note">অনুদানের অনুমতিের জন্য সেটিংস -> অ্যাপ -> পোকো এডিট -> অনুমতিগুলিতে যান</string>
-    <string name="title">শিরোনাম</string>
     <string name="yes">হ্যাঁ</string>
     <string name="no">না</string>
     <string name="exit_dialog_title">প্রস্থান ডায়ালগ</string>

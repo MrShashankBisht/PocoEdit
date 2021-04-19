@@ -8,7 +8,6 @@
     <string name="permission_text">Дозвіл</string>
     <string name="permission_sub_text">Для запуску цього додатка потрібен наступний дозвіл, надайте наступний дозвіл</string>
     <string name="permission_note">Щоб отримати дозвіл, перейдіть у налаштування -> додаток -> PocoEdit -> дозволи</string>
-    <string name="title">заголовок</string>
     <string name="yes">Так</string>
     <string name="no">Немає</string>
     <string name="exit_dialog_title">Діалогове вікно виходу</string>

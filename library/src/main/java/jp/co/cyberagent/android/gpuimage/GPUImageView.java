@@ -404,7 +404,7 @@ public class GPUImageView extends FrameLayout {
         final Semaphore waiter = new Semaphore(0);
 
         final int width = surfaceView.getMeasuredWidth();
-        final int height = surfaceView.getMeasuredHeight();
+            final int height = surfaceView.getMeasuredHeight();
 
         // Take picture on OpenGL thread
         final Bitmap resultBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);

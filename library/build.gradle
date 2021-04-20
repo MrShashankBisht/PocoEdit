@@ -15,9 +15,9 @@ android {
             cmake { cppFlags "" }
         }
     }
-//    externalNativeBuild {
-//        cmake { path "src/main/cpp/CMakeLists.txt" }
-//    }
+    externalNativeBuild {
+        cmake { path "src/main/cpp/CMakeLists.txt" }
+    }
 
     buildTypes {
         debug {

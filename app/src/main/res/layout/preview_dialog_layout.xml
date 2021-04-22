@@ -21,16 +21,29 @@
     </com.google.android.gms.ads.AdView>
 
 
-    <ImageView
+    <com.iab.pocoedit.editor.editimage.view.imagezoom.ImageViewTouch
         android:id="@+id/previewview_imageView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:scaleType="matrix"
         app:layout_constraintBottom_toTopOf="@+id/bottom_menu_constraint_layout"
         android:layout_marginBottom="@dimen/margin_10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/preview_dialog_adView"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/preview_dialog_adView" />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/previewview_imageView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/bottom_menu_constraint_layout"-->
+<!--            android:layout_marginBottom="@dimen/margin_10dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/preview_dialog_adView"-->
+<!--            tools:srcCompat="@tools:sample/avatars" />-->
+
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/preview_view_top_container"

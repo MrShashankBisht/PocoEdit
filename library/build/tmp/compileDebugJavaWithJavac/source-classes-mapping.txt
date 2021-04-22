@@ -32,6 +32,7 @@ jp/co/cyberagent/android/gpuimage/GPUImage.java
  jp.co.cyberagent.android.gpuimage.GPUImage$SaveTask$1
  jp.co.cyberagent.android.gpuimage.GPUImage$SaveTask$1$1
  jp.co.cyberagent.android.gpuimage.GPUImage$ScaleType
+ jp.co.cyberagent.android.gpuimage.GPUImage$SetImageBitmapCallBack
 jp/co/cyberagent/android/gpuimage/filter/GPUImageColorBalanceFilter.java
  jp.co.cyberagent.android.gpuimage.filter.GPUImageColorBalanceFilter
 jp/co/cyberagent/android/gpuimage/filter/GPUImageTwoPassFilter.java
@@ -201,6 +202,7 @@ jp/co/cyberagent/android/gpuimage/GPUImageRenderer.java
  jp.co.cyberagent.android.gpuimage.GPUImageRenderer$3
  jp.co.cyberagent.android.gpuimage.GPUImageRenderer$4
  jp.co.cyberagent.android.gpuimage.GPUImageRenderer$5
+ jp.co.cyberagent.android.gpuimage.GPUImageRenderer$6
 jp/co/cyberagent/android/gpuimage/filter/GPUImageChromaKeyBlendFilter.java
  jp.co.cyberagent.android.gpuimage.filter.GPUImageChromaKeyBlendFilter
 jp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup.java

@@ -783,4 +783,8 @@ public class GPUImage {
     public GPUImageRenderer getRenderer() {
         return renderer;
     }
+
+    public interface SetImageBitmapCallBack {
+        void onBitmapSet();
+    }
 }

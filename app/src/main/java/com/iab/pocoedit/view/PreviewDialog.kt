@@ -1,30 +1,32 @@
 package com.iab.pocoedit.view
 
 import android.app.Activity
-import android.content.ContentResolver
-import android.content.ContentUris
-import android.content.Context
-import android.content.Intent
+import android.content.*
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.core.content.FileProvider
 import androidx.fragment.app.DialogFragment
 import com.bumptech.glide.Glide
-import com.google.android.gms.ads.*
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 import com.iab.imagetext.model.ImageTextDataModel
 import com.iab.photoeditor.ImageInfoDataModel
 import com.iab.photoeditor.getRealPathFromURI
 import com.iab.photoeditor.getTempFilename
-import com.iab.pocoedit.view.MainActivity.RequestCode.ACTION_REQUEST_EDITIMAGE
 import com.iab.pocoedit.R
-import com.iab.pocoedit.getImageInfoDataModel
 import com.iab.pocoedit.editor.editimage.EditImageActivity
 import com.iab.pocoedit.editor.editimage.ImageEditorIntentBuilder
+import com.iab.pocoedit.getImageInfoDataModel
+import com.iab.pocoedit.view.MainActivity.RequestCode.ACTION_REQUEST_EDITIMAGE
 import kotlinx.android.synthetic.main.preview_dialog_layout.*
 import java.io.File
 import java.lang.ref.WeakReference
@@ -36,7 +38,7 @@ class PreviewDialog(context: Context, private var imageTextDataModel: ImageTextD
     private var fullPath:String? = null
     lateinit var dialogAdView : AdView;
     companion object {
-        fun newInstance(context: Context, imageTextDataModel: ImageTextDataModel, previewImageDialogInterface: PreviewImageDialogInterface, title:String?): PreviewDialog {
+        fun newInstance(context: Context, imageTextDataModel: ImageTextDataModel, previewImageDialogInterface: PreviewImageDialogInterface, title: String?): PreviewDialog {
             val frag = PreviewDialog(context, imageTextDataModel, previewImageDialogInterface)
             val args = Bundle()
             args.putString("title", title)
@@ -130,26 +132,27 @@ class PreviewDialog(context: Context, private var imageTextDataModel: ImageTextD
         preview_info_btn.setOnClickListener { infoOfImage() }
     }
 
-    private fun shareImage(imagePath: String?){
-        checkInfoMotionLayoutAndClose()
-        imagePath?.let {
+        private fun shareImage(imagePath: String?){
+            checkInfoMotionLayoutAndClose()
+            imagePath?.let {
             weakReferenceContext.get()?.let { it2 ->
                 val intent = Intent(Intent.ACTION_SEND)
                 val file = File(it)
                 intent.type = "image/*"
                 intent.putExtra(Intent.EXTRA_SUBJECT, it2.resources.getString(R.string.app_name))
-                val apkURI = FileProvider.getUriForFile(
-                        it2, it2.packageName + ".provider", file)
+                val apkURI = FileProvider.getUriForFile(it2, "com.iab.pocoedit.provider", file)
                 val resolvedIntentActivities: List<ResolveInfo> = it2.packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY)
                 for (resolvedIntentInfo in resolvedIntentActivities) {
                     val packageName = resolvedIntentInfo.activityInfo.packageName
                     it2.grantUriPermission(packageName, apkURI, Intent.FLAG_GRANT_WRITE_URI_PERMISSION or Intent.FLAG_GRANT_READ_URI_PERMISSION)
                 }
                 intent.putExtra(Intent.EXTRA_STREAM, apkURI)
+                intent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION;
                 this.startActivity(intent)
             }
         }
     }
+
 
     private fun onBackPress(){
         this.dismiss()
